@@ -35,8 +35,8 @@ the source/cloning the repository.
   out-of-the-box
 - Or you create a pipenv environment:
   ```
-      git clone https://github.com/jrathert/cookiereader.it
-      cd cookiereader
+      git clone https://github.com/jrathert/CookieReader.git
+      cd CookieReader
       pipenv install 
       pipenv run cookiereader.py -h
       ...
