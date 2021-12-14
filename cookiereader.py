@@ -4,6 +4,7 @@
 #
 # https://stackoverflow.com/questions/60416350/chrome-80-how-to-decode-cookies - user Topaco
 # https://stackoverflow.com/questions/23153159/decrypting-chromium-cookies/23727331#23727331 - user n8henrie
+# https://gist.github.com/GramThanos/ff2c42bb961b68e7cc197d6685e06f10 - user GramThanos
 #
 
 import configparser
