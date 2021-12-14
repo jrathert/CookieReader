@@ -32,7 +32,7 @@ def get_cookie_crypto_key():
     if passwd == '':
         return None
 
-    # No use the password and some default values used by both Chrome and Chromium in OSX and Linux
+    # Now use the password and some default values used by both Chrome and Chromium in OSX and Linux
     # to create and return the key
     salt = b'saltysalt'
     length = 16
@@ -66,7 +66,7 @@ def query_chrome(cookie_file: str, hosts=None):
 
     # ...get the necessary decryption key...
     key = get_cookie_crypto_key()
-    if key == None:
+    if key is None:
         print("ERROR: Could not retrieve decryption key - exiting")
         return
     iv = b' ' * 16
@@ -128,18 +128,18 @@ def print_usage():
     # some help
     name = os.path.basename(__file__)
     print(f"Usage: {name} chrome|firefox [-f cookie_file] [ host(s) ]")
-    print("  chrome|firefox : mandatory, specify what browser cookies you want to read")
-    print("  -f cookie_file : optional, specify file to read (needed, if program cannot determine file")
-    print("  host(s)        : optional, list of hosts/host patterns (SQL wildcards) for which you want to see cookies")
-    print("Examples:")
+    print(f"  chrome|firefox : mandatory, specify what browser cookies you want to read")
+    print(f"  -f cookie_file : optional, specify file to read (needed, if program cannot determine file)")
+    print(f"  host(s)        : optional, list of hosts/host patterns for which you want to see cookies")
+    print(f"Examples:")
     print(f"  # list all cookies from firefox default cookie DB")
-    print(f"    python {name} firefox ")
+    print(f"  $ python {name} firefox ")
     print(f"  # list cookies from specified firefox cookie DB")
-    print(f"    python {name} firefox -f /home/joe/.mozilla/Profile/cookies.sqlite")
+    print(f"  $ python {name} firefox -f /home/joe/.mozilla/Profile/cookies.sqlite")
     print(f"  # list all chrome cookies from www.microsoft.com or www.facebook.com")
-    print(f"    python {name} chrome www.microsoft.com www.facebook.com")
+    print(f"  $ python {name} chrome www.microsoft.com www.facebook.com")
     print(f"  # list cookies stored by *.apple.com domains in specified chrome cookie DB")
-    print(f"    python {name} chrome -f /tmp/Cookies %.apple.com")
+    print(f"  $ python {name} chrome -f /tmp/Cookies %.apple.com")
 
 
 def main():

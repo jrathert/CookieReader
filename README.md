@@ -46,9 +46,10 @@ the source/cloning the repository.
 
 Best is to simply call the integrated help
 ```
+$ python cookiereader.py -h
 Usage: cookiereader.py chrome|firefox [-f cookie_file] [ host(s) ]
   chrome|firefox : mandatory, specify what browser cookies you want to read
-  -f cookie_file : optional, specify file to read (needed, if program cannot determine file
+  -f cookie_file : optional, specify file to read (needed, if program cannot determine file)
   host(s)        : optional, list of hosts/host patterns for which you want to see cookies
 Examples:
   # list all cookies from firefox default cookie DB
@@ -59,6 +60,7 @@ Examples:
   $ python cookiereader.py chrome www.microsoft.com www.facebook.com
   # list cookies stored by *.apple.com domains in specified chrome cookie DB
   $ python cookiereader.py chrome -f /tmp/Cookies %.apple.com
+$ _
 ```
 For the host specification, the tool supports SQL wildcards, i.e., specifically the '%' sign. See example above.
 
